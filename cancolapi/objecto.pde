@@ -1,12 +1,12 @@
  abstract class objecto {
    PImage icon;
-   int X,Y, Ancho, Alto;
+   int X,Y, Ancho, Alto,tipe;
    boolean posicionado;
    
     objecto(int X, int Y, String i) {
       Ancho = 50;
       Alto = 50;
-      
+      tipe = 0;
       posicionado = true;
       
       this.X = X;
@@ -35,6 +35,9 @@
       }
     }
     
+    int getTipe(){
+      return tipe;
+    }
     
     int getX(){
       return X;

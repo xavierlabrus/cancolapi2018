@@ -1,9 +1,7 @@
 class ladder  extends objecto  {
-   PImage icon;
-   int X;
-   int Y;
   ladder(int X, int Y, String i) {
     super(X, Y, i);
+    tipe = 3;
     super.getX();
     super.getY();
   }

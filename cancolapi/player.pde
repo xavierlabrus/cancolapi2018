@@ -173,8 +173,8 @@ class Player{
     }
   }
   
-  void setText(int opcion){
-    dialogo = texto.getText(opcion);
+  void setText(int opcion, int object){
+    dialogo = texto.getText(opcion , object);
     
   }
  

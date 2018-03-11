@@ -4,6 +4,7 @@ class bone extends objecto {
    int Y;
   bone(int X, int Y, String i) {
     super(X, Y, i);
+    tipe = 4;
     super.getX();
     super.getY();
   }
