@@ -6,6 +6,8 @@ class Player{
   PImage[] front = new PImage[10];
   PImage[] back = new PImage[10];
   
+  String dialogo = "";
+  
   int temporizador = 0;
   
   //Img for a Interface
@@ -15,6 +17,7 @@ class Player{
   
   
   ArrayList<objecto> Mochila = new ArrayList<objecto>();
+  dialog texto = new dialog();
   
   PImage[] sprite = front;
   
@@ -161,11 +164,18 @@ class Player{
     if (Mochila.size() > 0){
       image(select,65,460,50,50);
     }
-    if ( temporizador < 500) {
-      text("hola",275,455);
+    if ( temporizador < 100) {
+      text(dialogo,275,455);
       temporizador++;
+    }else {
+      dialogo = "";
+      temporizador = 0;
     }
   }
   
+  void setText(int opcion){
+    dialogo = texto.getText(opcion);
+    
+  }
  
 }

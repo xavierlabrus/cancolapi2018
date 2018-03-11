@@ -85,6 +85,7 @@ void paisage(){
         
         if (!take && o.disponible()) {
           player1.setElement(o);
+          player1.setText(1);
           o.display(take);
           take = true;
           break;
