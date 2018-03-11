@@ -1,4 +1,5 @@
 class ghost {
+
   PImage[] sprites; 
   
   
