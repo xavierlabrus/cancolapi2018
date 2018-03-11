@@ -32,7 +32,7 @@ void draw(){
   paisage();
   background(field);
   
-  for (int i = 0; i < 4; i++) {
+  for (int i = 0; i < Mochila.size(); i++) {
     Mochila.get(i).display(take);
   }
   
@@ -40,10 +40,10 @@ void draw(){
 }
 void init(){
   
-  bone = new bone(200, 75, "img/ITEMS/BONES.png");
-  ladder = new ladder(400, 75, "img/ITEMS/LADDER.png");
-  key1 = new llave(444, 75, "img/ITEMS/KEY.png");
-  key2 = new llave(500, 75, "img/ITEMS/KEY.png");
+  bone = new bone(200, 75);
+  ladder = new ladder(400, 75);
+  key1 = new llave(444, 75);
+  key2 = new llave(500, 75);
  
  
  Mochila.add(bone);
@@ -58,7 +58,7 @@ void paisage(){
    x = 0;
    direction = 0;
    if (!inv) {
-     switch(key){
+    switch(key){
     case 'a':;
     case 'w': x = -5 ; break;
     case 's':;
@@ -96,10 +96,51 @@ void paisage(){
           
         }
       }      
-    }   
+    }
+    
+    
+     if (key == 'i' && player1.Mochila.size() != 0) {
+       inv = !inv;
+       player1.setText( 3, 0);
+      
+     }
    } else {
-     if (key == 'e') {
      
+     if (key == 'i') {
+       inv = !inv;
+       player1.setText( 4, 0);
+     }
+     
+     
+      
+      switch(key){
+      case 'a':x = -65;break;
+      case 'w': x = -50 ; break;
+      case 's':x = 50; break;
+      case 'd': x= 65;break;
+      default: x = 0;
+      }
+      switch(key){
+      case 'a':;
+      case 'd':direction = 1; break;
+      case 'w':;
+      case 's':direction = 2; break;    
+      default: x = 0;
+      }
+    if (key == 'a' || key == 's' || key == 'w' || key == 'd' ) {
+      
+    }
+     
+     
+     
+     if (key == 'q') {
+       if(player1.mochilaDisp()){
+         player1.setText(2, player1.Mochila.get(player1.item).getTipe());
+         Mochila.add(player1.tirar());
+         inv = !inv;
+         
+       }
+      
      }
    }
     

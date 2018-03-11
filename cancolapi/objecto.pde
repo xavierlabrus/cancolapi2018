@@ -1,9 +1,10 @@
  abstract class objecto {
    PImage icon;
-   int X,Y, Ancho, Alto,tipe;
-   boolean posicionado;
+   float X,Y, Ancho, Alto,tipe;
+   boolean posicionado = true;
+   String i;
    
-    objecto(int X, int Y, String i) {
+    objecto(float X, float Y) {
       Ancho = 50;
       Alto = 50;
       tipe = 0;
@@ -35,15 +36,20 @@
       }
     }
     
-    int getTipe(){
+    float getTipe(){
       return tipe;
     }
     
-    int getX(){
+    float getX(){
       return X;
     }
-    int getY(){
+     float getY(){
       return Y;
     }
+    
+    abstract objecto drop(float x, float y);
+    abstract void  usar();
+    
+    
  
  }

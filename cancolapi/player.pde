@@ -51,6 +51,7 @@ class Player{
     image(sprite[move],posX,posY,ancho,altura);
     bag();
     selecItem();
+    showDialog();
   }
   
   void move (int direction, float x){
@@ -111,14 +112,11 @@ class Player{
     imageMode(CENTER);
     image(sprite[move],posX,posY,altura,altura);
   }
-  boolean take(int X, int Y){
+  boolean take(float X, float Y){
      boolean take = true;
-     println(take);
+     
      if ((posX + 25) > X && (posX + 25) < (X + 50) && (posY + 60) > Y && (posY + 60) < (Y+ 50)) {
        take = false;
-       while(X == 1000){
-         println(take);
-       }
      } else {
        take = true;
      }
@@ -162,8 +160,14 @@ class Player{
     int itemX = 65;
     int itemY = 460;
     if (Mochila.size() > 0){
-      image(select,65,460,50,50);
+      
+      
+      image(select,itemX,itemY,50,50);
     }
+    
+  }
+  
+  void showDialog(){
     if ( temporizador < 100) {
       text(dialogo,275,455);
       temporizador++;
@@ -173,7 +177,20 @@ class Player{
     }
   }
   
-  void setText(int opcion, int object){
+  boolean mochilaDisp(){
+    boolean disp = false;
+    if (Mochila.size() > 0){
+      disp = true;
+    }
+    return disp;
+  }
+  
+  objecto tirar(){
+    objecto i = Mochila.get(item).drop(posX,posY + 40);
+    Mochila.remove(item);
+    return i;
+  }
+  void setText(float opcion, float object){
     dialogo = texto.getText(opcion , object);
     
   }

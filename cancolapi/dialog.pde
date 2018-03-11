@@ -4,20 +4,23 @@ class dialog {
    
    }
    
-     String getText(int o, int i){
+     String getText(float o, float i){
        String text = "" ;
        String item = " objeto";
-       println(i);
+       
        if (i > 0){
-         switch(i){
+         switch((int)i){
            case 1:item = "a llave";break;
            case 2:item = "a ouija";break;
            case 3:item = "a escalera";break;
            case 4:item = " hueso";break;
          }
        } 
-       switch(o){
-         case 1:text = "has obtenido un"+ item +".";
+       switch((int)o){
+         case 1:text = "has obtenido un"+ item +".";break;
+         case 2:text = "has dejado un"+ item +".";break;
+         case 3:text = "has abierto el inventario";break;
+         case 4:text = "has cerrado el inventario";break;
        }
        
        
