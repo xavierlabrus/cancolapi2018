@@ -1,4 +1,5 @@
-class ghosy {
+class ghost {
+
   PImage[] sprites; 
   
   
