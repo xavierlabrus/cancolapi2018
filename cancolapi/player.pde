@@ -1,10 +1,14 @@
   import java.util.Iterator;
 class Player{
-
+  //Sprites for Player
   PImage[] left = new PImage[10];
   PImage[] rigth = new PImage[10];
   PImage[] front = new PImage[10];
   PImage[] back = new PImage[10];
+  
+  int temporizador = 0;
+  
+  //Img for a Interface
   PImage bag = loadImage("img/INTERFACE/BAG.png");
   PImage select = loadImage("img/INTERFACE/SELECTED.png");
   PImage dialog = loadImage("img/INTERFACE/DIALOG.png");
@@ -156,6 +160,10 @@ class Player{
     int itemY = 460;
     if (Mochila.size() > 0){
       image(select,65,460,50,50);
+    }
+    if ( temporizador < 500) {
+      text("hola",275,455);
+      temporizador++;
     }
   }
   
