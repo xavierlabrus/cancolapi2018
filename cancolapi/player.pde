@@ -9,7 +9,8 @@ class Player{
   String dialogo = "";
   
   int temporizador = 0;
-  
+  int itemX = 65;
+  int itemY = 460;
   //Img for a Interface
   PImage bag = loadImage("img/INTERFACE/BAG.png");
   PImage select = loadImage("img/INTERFACE/SELECTED.png");
@@ -50,7 +51,7 @@ class Player{
   void display(){
     image(sprite[move],posX,posY,ancho,altura);
     bag();
-    selecItem();
+    selecItem(-1000, -1000);
     showDialog();
   }
   
@@ -156,12 +157,25 @@ class Player{
     Mochila.add(o);
   }
   
-  void selecItem(){
-    int itemX = 65;
-    int itemY = 460;
+  void selecItem(float x){
+    
+   if (direction > -1000) {
+     
+     if ((int)direction == 1) {
+       
+       
+       
+       itemX += x;
+       if (x > 0) {
+         item++;
+       } else {
+         item--;
+       }
+      }
+      
+   }
+    
     if (Mochila.size() > 0){
-      
-      
       image(select,itemX,itemY,50,50);
     }
     
@@ -194,5 +208,7 @@ class Player{
     dialogo = texto.getText(opcion , object);
     
   }
- 
+  void moveSelect(float x){
+     
+  }
 }

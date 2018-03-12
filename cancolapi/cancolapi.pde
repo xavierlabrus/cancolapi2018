@@ -105,7 +105,9 @@ void paisage(){
       
      }
    } else {
-     
+     float y,dire;
+     y = 0;
+     dire = 0;
      if (key == 'i') {
        inv = !inv;
        player1.setText( 4, 0);
@@ -114,21 +116,13 @@ void paisage(){
      
       
       switch(key){
-      case 'a':x = -65;break;
-      case 'w': x = -50 ; break;
-      case 's':x = 50; break;
-      case 'd': x= 65;break;
-      default: x = 0;
+      case 'a':y = -60;break;
+      case 'd': y= 60;break;
+      default: y = 0;
       }
-      switch(key){
-      case 'a':;
-      case 'd':direction = 1; break;
-      case 'w':;
-      case 's':direction = 2; break;    
-      default: x = 0;
-      }
-    if (key == 'a' || key == 's' || key == 'w' || key == 'd' ) {
       
+    if (key == 'a' || key == 'd' ) {
+      player1.selecItem(y);
     }
      
      
